@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookCut - Beta Testing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            vibrant: '#7000FF', // Violeta del botón principal
+                            accent: '#9d4edd',  // Magenta de los campos de texto
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans selection:bg-brand-vibrant selection:text-white">
+
+    <!-- Navegación -->
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <div class="text-2xl font-black tracking-tighter text-brand-vibrant">BOOK<span class="text-white">CUT</span></div>
+        <div class="hidden md:block text-zinc-400 text-sm uppercase tracking-widest font-semibold italic">Beta Testing Phase</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative py-20 px-6 overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-vibrant/10 text-brand-vibrant text-xs font-bold uppercase tracking-wider mb-6 border border-brand-vibrant/20">
+                Android APK v1.0.0
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Lleva tu barbería al <br>
+                <span class="text-brand-vibrant text-transparent bg-clip-text bg-gradient-to-r from-brand-vibrant to-brand-accent">siguiente nivel.</span>
+            </h1>
+            <p class="text-zinc-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                BookCut es la solución móvil diseñada específicamente para barberos. Gestiona tus citas, organiza tu agenda y ofrece una experiencia premium a tus clientes desde la palma de tu mano.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="bookcut.apk" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-brand-vibrant rounded-xl focus:outline-none hover:brightness-110 shadow-[0_0_30px_rgba(112,0,255,0.4)]">
+                    <i class="fa-brands fa-android mr-3 text-xl"></i>
+                    Descargar BookCut APK
+                </a>
+            </div>
+            <p class="mt-4 text-xs text-zinc-500 italic">Tamaño del archivo: ~50MB | Requiere Android 8.0+</p>
+        </div>
+        
+        <!-- Efecto de fondo degradado similar a tu App -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-vibrant/10 rounded-full blur-[120px] -z-10"></div>
+    </header>
+
+    <!-- Características -->
+    <section class="py-24 px-6 bg-zinc-900/30">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
+            <!-- Feature 1 -->
+            <div class="space-y-4">
+                <div class="text-brand-accent text-4xl font-light italic opacity-50">01.</div>
+                <h3 class="text-2xl font-bold">Agenda Inteligente</h3>
+                <h4 class="text-brand-vibrant font-semibold text-sm uppercase tracking-wide">Control Total</h4>
+                <p class="text-zinc-400 leading-relaxed text-sm">Visualiza tu día, semana o mes. Evita solapamientos y gestiona cancelaciones al instante.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="space-y-4">
+                <div class="text-brand-accent text-4xl font-light italic opacity-50">02.</div>
+                <h3 class="text-2xl font-bold">Clientes VIP</h3>
+                <h4 class="text-brand-vibrant font-semibold text-sm uppercase tracking-wide">Base de Datos</h4>
+                <p class="text-zinc-400 leading-relaxed text-sm">Guarda preferencias, historial de cortes y datos de contacto de cada cliente.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="space-y-4">
+                <div class="text-brand-accent text-4xl font-light italic opacity-50">03.</div>
+                <h3 class="text-2xl font-bold">Recordatorios</h3>
+                <h4 class="text-brand-vibrant font-semibold text-sm uppercase tracking-wide">Menos Ausencias</h4>
+                <p class="text-zinc-400 leading-relaxed text-sm">Notificaciones automáticas para que tus clientes nunca olviden su cita.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guía de Instalación -->
+    <section class="py-24 px-6 border-t border-zinc-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">¿Cómo instalar BookCut?</h2>
+            <div class="space-y-10">
+                <div class="flex gap-6 items-start">
+                    <span class="flex-none w-10 h-10 rounded-lg bg-brand-vibrant/20 text-brand-vibrant flex items-center justify-center font-bold border border-brand-vibrant/30">1</span>
+                    <p class="text-zinc-300">Descarga el archivo APK usando el botón de arriba directamente en tu dispositivo Android.</p>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <span class="flex-none w-10 h-10 rounded-lg bg-brand-vibrant/20 text-brand-vibrant flex items-center justify-center font-bold border border-brand-vibrant/30">2</span>
+                    <p class="text-zinc-300 italic">Si tu sistema lo solicita, activa la opción <strong>"Permitir instalación desde orígenes desconocidos"</strong> en los ajustes de seguridad.</p>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <span class="flex-none w-10 h-10 rounded-lg bg-brand-vibrant/20 text-brand-vibrant flex items-center justify-center font-bold border border-brand-vibrant/30">3</span>
+                    <p class="text-zinc-300">Abre el archivo descargado y selecciona <strong>"Instalar"</strong>. ¡Listo para empezar!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-zinc-900 text-center">
+        <div class="text-zinc-500 font-bold tracking-[0.4em] text-xs mb-4 uppercase">Darkmatter</div>
+        <p class="text-zinc-700 text-[10px] tracking-widest uppercase">© 2026 BookCut App. Todos los derechos reservados.DARKMATTER</p>
+    </footer>
+
+</body>
+</html>
