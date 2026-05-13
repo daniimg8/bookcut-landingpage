@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookCut - Beta Testing</title>
+    <title>BOOK&CUT - Beta Testing</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Configuraciones de Tailwind y Animaciones Personalizadas -->
+    <style>
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+    </style>
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            vibrant: '#7000FF', // Violeta del botón principal
-                            accent: '#9d4edd',  // Magenta de los campos de texto
+                            logoblue: '#0028FF', // Azul del logo
+                            logored: '#FF0000',  // Rojo del logo
                         }
                     }
                 }
@@ -21,93 +46,110 @@
         }
     </script>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans selection:bg-brand-vibrant selection:text-white">
+<body class="bg-zinc-950 text-zinc-100 font-sans selection:bg-brand-logoblue selection:text-white overflow-x-hidden">
 
-    <!-- Navegación -->
-    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
-        <div class="text-2xl font-black tracking-tighter text-brand-vibrant">BOOK<span class="text-white">CUT</span></div>
+    <!-- Navegación con el Logo -->
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto animate-fade-in-up">
+        <div class="flex items-center gap-3">
+            <!-- Imagen del Logo -->
+            <img src="logo.png" alt="BOOK&CUT Logo" class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.1)] object-contain">
+            
+            <!-- Texto BOOK&CUT: Azul, Blanco, Rojo -->
+            <div class="text-2xl md:text-3xl font-black tracking-tighter">
+                <span class="text-brand-logoblue">BOOK</span><span class="text-white">&amp;</span><span class="text-brand-logored">CUT</span>
+            </div>
+        </div>
         <div class="hidden md:block text-zinc-400 text-sm uppercase tracking-widest font-semibold italic">Beta Testing Phase</div>
     </nav>
 
     <!-- Hero Section -->
     <header class="relative py-20 px-6 overflow-hidden">
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-brand-vibrant/10 text-brand-vibrant text-xs font-bold uppercase tracking-wider mb-6 border border-brand-vibrant/20">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-logoblue/10 text-brand-logoblue text-xs font-bold uppercase tracking-wider mb-6 border border-brand-logoblue/30 animate-fade-in-up delay-100">
                 Android APK v1.0.0
             </span>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-fade-in-up delay-200">
                 Lleva tu barbería al <br>
-                <span class="text-brand-vibrant text-transparent bg-clip-text bg-gradient-to-r from-brand-vibrant to-brand-accent">siguiente nivel.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-logoblue via-white to-brand-logored">siguiente nivel.</span>
             </h1>
-            <p class="text-zinc-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-                BookCut es la solución móvil diseñada específicamente para barberos. Gestiona tus citas, organiza tu agenda y ofrece una experiencia premium a tus clientes desde la palma de tu mano.
+            <p class="text-zinc-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-300">
+                <span class="font-black tracking-wide"><span class="text-brand-logoblue">BOOK</span><span class="text-white">&amp;</span><span class="text-brand-logored">CUT</span></span> es la solución móvil diseñada específicamente para barberos. Gestiona tus citas, organiza tu agenda y ofrece una experiencia premium a tus clientes.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="bookcut.apk" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-brand-vibrant rounded-xl focus:outline-none hover:brightness-110 shadow-[0_0_30px_rgba(112,0,255,0.4)]">
-                    <i class="fa-brands fa-android mr-3 text-xl"></i>
-                    Descargar BookCut APK
-                </a>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in-up delay-400">
+                <div class="animate-float">
+                    <a href="bookcut.apk" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-brand-logoblue rounded-xl focus:outline-none hover:bg-brand-logored hover:scale-105 shadow-[0_0_30px_rgba(0,40,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,0,0.4)]">
+                        <i class="fa-brands fa-android mr-3 text-xl group-hover:animate-bounce"></i>
+                        Descargar APK
+                    </a>
+                </div>
             </div>
-            <p class="mt-4 text-xs text-zinc-500 italic">Tamaño del archivo: ~50MB | Requiere Android 8.0+</p>
+            <p class="mt-6 text-xs text-zinc-500 italic animate-fade-in-up delay-500">Tamaño del archivo: ~50MB | Requiere Android 8.0+</p>
         </div>
         
-        <!-- Efecto de fondo degradado similar a tu App -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-vibrant/10 rounded-full blur-[120px] -z-10"></div>
+        <!-- Efecto de fondo degradado (Azul y Rojo) -->
+        <div class="absolute top-1/2 left-[30%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-logoblue/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+        <div class="absolute top-1/2 left-[70%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-logored/10 rounded-full blur-[120px] -z-10 animate-pulse delay-700"></div>
     </header>
 
-    <!-- Características -->
+    <!-- Características con colores intercalados -->
     <section class="py-24 px-6 bg-zinc-900/30">
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
-            <!-- Feature 1 -->
-            <div class="space-y-4">
-                <div class="text-brand-accent text-4xl font-light italic opacity-50">01.</div>
+            <!--  (Azul) -->
+            <div class="space-y-4 animate-fade-in-up delay-200 hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-brand-logoblue text-4xl font-light italic opacity-70">01.</div>
                 <h3 class="text-2xl font-bold">Agenda Inteligente</h3>
-                <h4 class="text-brand-vibrant font-semibold text-sm uppercase tracking-wide">Control Total</h4>
+                <h4 class="text-brand-logoblue font-semibold text-sm uppercase tracking-wide">Control Total</h4>
                 <p class="text-zinc-400 leading-relaxed text-sm">Visualiza tu día, semana o mes. Evita solapamientos y gestiona cancelaciones al instante.</p>
             </div>
-            <!-- Feature 2 -->
-            <div class="space-y-4">
-                <div class="text-brand-accent text-4xl font-light italic opacity-50">02.</div>
+            <!--(Blanco) -->
+            <div class="space-y-4 animate-fade-in-up delay-300 hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-white text-4xl font-light italic opacity-70">02.</div>
                 <h3 class="text-2xl font-bold">Clientes VIP</h3>
-                <h4 class="text-brand-vibrant font-semibold text-sm uppercase tracking-wide">Base de Datos</h4>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wide">Base de Datos</h4>
                 <p class="text-zinc-400 leading-relaxed text-sm">Guarda preferencias, historial de cortes y datos de contacto de cada cliente.</p>
             </div>
-            <!-- Feature 3 -->
-            <div class="space-y-4">
-                <div class="text-brand-accent text-4xl font-light italic opacity-50">03.</div>
+            <!--(Rojo) -->
+            <div class="space-y-4 animate-fade-in-up delay-400 hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-brand-logored text-4xl font-light italic opacity-70">03.</div>
                 <h3 class="text-2xl font-bold">Recordatorios</h3>
-                <h4 class="text-brand-vibrant font-semibold text-sm uppercase tracking-wide">Menos Ausencias</h4>
+                <h4 class="text-brand-logored font-semibold text-sm uppercase tracking-wide">Menos Ausencias</h4>
                 <p class="text-zinc-400 leading-relaxed text-sm">Notificaciones automáticas para que tus clientes nunca olviden su cita.</p>
             </div>
         </div>
     </section>
 
-    <!-- Guía de Instalación -->
-    <section class="py-24 px-6 border-t border-zinc-900">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center">¿Cómo instalar BookCut?</h2>
-            <div class="space-y-10">
-                <div class="flex gap-6 items-start">
-                    <span class="flex-none w-10 h-10 rounded-lg bg-brand-vibrant/20 text-brand-vibrant flex items-center justify-center font-bold border border-brand-vibrant/30">1</span>
-                    <p class="text-zinc-300">Descarga el archivo APK usando el botón de arriba directamente en tu dispositivo Android.</p>
+    <!-- Guía de Instalación con pasos intercalados -->
+    <section class="py-24 px-6 border-t border-zinc-900 overflow-hidden">
+        <div class="max-w-3xl mx-auto animate-fade-in-up delay-200">
+            <h2 class="text-3xl font-bold mb-12 text-center">¿Cómo instalar <span class="font-black"><span class="text-brand-logoblue">BOOK</span><span class="text-white">&amp;</span><span class="text-brand-logored">CUT</span></span>?</h2>
+            <div class="space-y-10 relative">
+                <!-- Línea conectora con degradado -->
+                <div class="absolute left-5 top-10 bottom-10 w-0.5 bg-gradient-to-b from-brand-logoblue via-white to-brand-logored opacity-30 hidden md:block"></div>
+                
+                <!--  (Azul) -->
+                <div class="flex gap-6 items-start relative bg-zinc-900/50 p-6 rounded-2xl border border-zinc-800/50 hover:border-brand-logoblue/50 transition-colors">
+                    <span class="flex-none w-10 h-10 rounded-lg bg-brand-logoblue/20 text-brand-logoblue flex items-center justify-center font-bold border border-brand-logoblue/50 z-10 shadow-lg">1</span>
+                    <p class="text-zinc-300 pt-2">Descarga el archivo APK usando el botón de arriba directamente en tu dispositivo Android.</p>
                 </div>
-                <div class="flex gap-6 items-start">
-                    <span class="flex-none w-10 h-10 rounded-lg bg-brand-vibrant/20 text-brand-vibrant flex items-center justify-center font-bold border border-brand-vibrant/30">2</span>
-                    <p class="text-zinc-300 italic">Si tu sistema lo solicita, activa la opción <strong>"Permitir instalación desde orígenes desconocidos"</strong> en los ajustes de seguridad.</p>
+                <!-- (Blanco) -->
+                <div class="flex gap-6 items-start relative bg-zinc-900/50 p-6 rounded-2xl border border-zinc-800/50 hover:border-white/50 transition-colors">
+                    <span class="flex-none w-10 h-10 rounded-lg bg-white/10 text-white flex items-center justify-center font-bold border border-white/30 z-10 shadow-lg">2</span>
+                    <p class="text-zinc-300 pt-2 italic">Si tu sistema lo solicita, activa la opción <strong class="text-white">"Permitir instalación desde orígenes desconocidos"</strong> en los ajustes.</p>
                 </div>
-                <div class="flex gap-6 items-start">
-                    <span class="flex-none w-10 h-10 rounded-lg bg-brand-vibrant/20 text-brand-vibrant flex items-center justify-center font-bold border border-brand-vibrant/30">3</span>
-                    <p class="text-zinc-300">Abre el archivo descargado y selecciona <strong>"Instalar"</strong>. ¡Listo para empezar!</p>
+                <!--  (Rojo) -->
+                <div class="flex gap-6 items-start relative bg-zinc-900/50 p-6 rounded-2xl border border-zinc-800/50 hover:border-brand-logored/50 transition-colors">
+                    <span class="flex-none w-10 h-10 rounded-lg bg-brand-logored/20 text-brand-logored flex items-center justify-center font-bold border border-brand-logored/50 z-10 shadow-lg">3</span>
+                    <p class="text-zinc-300 pt-2">Abre el archivo descargado y selecciona <strong class="text-white">"Instalar"</strong>. ¡Listo para empezar!</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-zinc-900 text-center">
+    <footer class="py-12 px-6 border-t border-zinc-900 text-center animate-fade-in-up delay-300">
         <div class="text-zinc-500 font-bold tracking-[0.4em] text-xs mb-4 uppercase">Darkmatter</div>
-        <p class="text-zinc-700 text-[10px] tracking-widest uppercase">© 2026 BookCut App. Todos los derechos reservados.DARKMATTER</p>
+        <p class="text-zinc-700 text-[10px] tracking-widest uppercase">© 2024 <span class="font-bold text-zinc-500">BOOK&CUT</span> App. Todos los derechos reservados.</p>
     </footer>
 
 </body>
